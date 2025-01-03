@@ -20,12 +20,12 @@ public partial class Simulation: Node2D
 			* Add (polygonal) obstacles, specifying their vertices in
 			* counterclockwise order.
 			*/
-		// IList<RVO.Vector2> obstacle1 = new List<RVO.Vector2>();
-		// obstacle1.Add(new RVO.Vector2(10.0f, 10.0f));
-		// obstacle1.Add(new RVO.Vector2(40.0f, 10.0f));
-		// obstacle1.Add(new RVO.Vector2(40.0f, 20.0f));
-		// obstacle1.Add(new RVO.Vector2(10.0f, 20.0f));
-		// Simulator.Instance.addObstacle(obstacle1);
+		IList<RVO.Vector2> obstacle1 = new List<RVO.Vector2>();
+		obstacle1.Add(new RVO.Vector2(10.0f, 10.0f));
+		obstacle1.Add(new RVO.Vector2(30.0f, 10.0f));
+		obstacle1.Add(new RVO.Vector2(30.0f, 20.0f));
+		obstacle1.Add(new RVO.Vector2(10.0f, 20.0f));
+		Simulator.Instance.addObstacle(obstacle1);
 
 		/*
 			* Process the obstacles so that they are accounted for in the
