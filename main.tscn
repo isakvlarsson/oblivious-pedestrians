@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1r3t8ch1vcp8"]
+[gd_scene load_steps=7 format=3 uid="uid://d1r3t8ch1vcp8"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_nq8pw"]
 [ext_resource type="Script" path="res://agent.gd" id="2_fwux2"]
@@ -6,42 +6,43 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_necqq"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1ntgi"]
+vertices = PackedVector2Array(490, 12.9375, 490, 493, 10, 493, 10.0938, 10.0625)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0.1, 0, 0, 503, 500, 503, 500, 3)])
+
+[sub_resource type="BoxMesh" id="BoxMesh_jcmh5"]
+
 [node name="Main" type="Node2D"]
 position = Vector2(0, -3)
-scale = Vector2(20, 20)
 script = ExtResource("1_nq8pw")
 
-[node name="Agent2" type="Node2D" parent="." groups=["agent"]]
-position = Vector2(10.95, 22.1)
-script = ExtResource("2_fwux2")
-pref_vel = Vector2(0, -1)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent2"]
-mesh = SubResource("SphereMesh_necqq")
-
-[node name="Agent4" type="Node2D" parent="." groups=["agent"]]
-position = Vector2(14, 22.1)
-script = ExtResource("2_fwux2")
-pref_vel = Vector2(0, -1)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent4"]
-mesh = SubResource("SphereMesh_necqq")
-
 [node name="Agent" type="Node2D" parent="." groups=["agent"]]
-position = Vector2(10, 3.75)
+position = Vector2(161, 89)
+scale = Vector2(20, 20)
 script = ExtResource("2_fwux2")
-pref_vel = Vector2(0, 1)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Agent"]
 mesh = SubResource("SphereMesh_necqq")
 
-[node name="Agent3" type="Node2D" parent="." groups=["agent"]]
-position = Vector2(13, 3.9)
-script = ExtResource("2_fwux2")
-pref_vel = Vector2(0, 1)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent3"]
-mesh = SubResource("SphereMesh_necqq")
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent"]
 
 [node name="Simulation" type="Node2D" parent="."]
 script = ExtResource("3_62xxc")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+visible = false
+position = Vector2(155, 224)
+vertices = PackedVector2Array(-94, -5, 114, -7, 112, 32, -91, 32)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_1ntgi")
+
+[node name="Target" type="Node2D" parent="."]
+position = Vector2(256, 417)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Target"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_jcmh5")
