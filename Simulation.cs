@@ -8,6 +8,7 @@ using Godot.Collections;
 
 public partial class Simulation: Node2D
 {
+	const float SCALE = 20;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 
@@ -41,12 +42,12 @@ public partial class Simulation: Node2D
 	}
 
 	public static int AddAgent(Node2D agent){
-		int id = Simulator.Instance.addAgent((RVO.Vector2)agent.Position);
+		int id = Simulator.Instance.addAgent((RVO.Vector2)agent.Position/SCALE);
 		return id;
 	}
 
 	public static Godot.Vector2 GetAgentPosition(int id) {
-		return (Godot.Vector2)Simulator.Instance.getAgentPosition(id);
+		return (Godot.Vector2)Simulator.Instance.getAgentPosition(id)*SCALE;
 	}
 
 	public static void SetAgentPreferedVelocity(int id, Godot.Vector2 vel){
