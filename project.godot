@@ -27,6 +27,7 @@ project/assembly_name="Oblivious Pedestrians"
 [global_group]
 
 agent=""
+obstacle=""
 
 [rendering]
 

@@ -7,42 +7,252 @@
 [sub_resource type="SphereMesh" id="SphereMesh_necqq"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1ntgi"]
-vertices = PackedVector2Array(490, 12.9375, 490, 493, 10, 493, 10.0938, 10.0625)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+vertices = PackedVector2Array(304.812, 178, 490, 178, 490, 332.961, 308.188, 329.828, 191, 326.172, 196, 180, 196, 11.1719, 307.922, 11.8438, 305.133, 493, 191, 493, 10.0625, 180, 10.0312, 323.047)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 0, 5), PackedInt32Array(8, 9, 4, 3), PackedInt32Array(10, 5, 4, 11)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0.1, 0, 0, 503, 500, 503, 500, 3)])
 
 [sub_resource type="BoxMesh" id="BoxMesh_jcmh5"]
 
 [node name="Main" type="Node2D"]
-position = Vector2(0, -3)
 script = ExtResource("1_nq8pw")
 
-[node name="Agent" type="Node2D" parent="." groups=["agent"]]
-position = Vector2(161, 89)
+[node name="Agent" type="Node2D" parent="." node_paths=PackedStringArray("target") groups=["agent"]]
+z_index = 1
+position = Vector2(220, 58)
 scale = Vector2(20, 20)
 script = ExtResource("2_fwux2")
+target = NodePath("../Target")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Agent"]
+modulate = Color(0.27, 0.683667, 1, 1)
 mesh = SubResource("SphereMesh_necqq")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent"]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+debug_enabled = true
+
+[node name="Agent7" type="Node2D" parent="." node_paths=PackedStringArray("target") groups=["agent"]]
+z_index = 1
+position = Vector2(280, 38)
+scale = Vector2(20, 20)
+script = ExtResource("2_fwux2")
+target = NodePath("../Target")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent7"]
+modulate = Color(0.27, 0.683667, 1, 1)
+mesh = SubResource("SphereMesh_necqq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent7"]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+debug_enabled = true
+
+[node name="Agent8" type="Node2D" parent="." node_paths=PackedStringArray("target") groups=["agent"]]
+z_index = 1
+position = Vector2(214, 30)
+scale = Vector2(20, 20)
+script = ExtResource("2_fwux2")
+target = NodePath("../Target")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent8"]
+modulate = Color(0.27, 0.683667, 1, 1)
+mesh = SubResource("SphereMesh_necqq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent8"]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+debug_enabled = true
+
+[node name="Agent9" type="Node2D" parent="." node_paths=PackedStringArray("target") groups=["agent"]]
+z_index = 1
+position = Vector2(249, 36)
+scale = Vector2(20, 20)
+script = ExtResource("2_fwux2")
+target = NodePath("../Target")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent9"]
+modulate = Color(0.27, 0.683667, 1, 1)
+mesh = SubResource("SphereMesh_necqq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent9"]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+debug_enabled = true
+
+[node name="Agent10" type="Node2D" parent="." node_paths=PackedStringArray("target") groups=["agent"]]
+z_index = 1
+position = Vector2(253, 60)
+scale = Vector2(20, 20)
+script = ExtResource("2_fwux2")
+target = NodePath("../Target")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent10"]
+modulate = Color(0.27, 0.683667, 1, 1)
+mesh = SubResource("SphereMesh_necqq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent10"]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+debug_enabled = true
+
+[node name="Agent11" type="Node2D" parent="." node_paths=PackedStringArray("target") groups=["agent"]]
+z_index = 1
+position = Vector2(288, 66)
+scale = Vector2(20, 20)
+script = ExtResource("2_fwux2")
+target = NodePath("../Target")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent11"]
+modulate = Color(0.27, 0.683667, 1, 1)
+mesh = SubResource("SphereMesh_necqq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent11"]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+debug_enabled = true
+
+[node name="Agent2" type="Node2D" parent="." node_paths=PackedStringArray("target") groups=["agent"]]
+modulate = Color(0.07, 1, 0.7055, 1)
+z_index = 1
+position = Vector2(428, 222)
+scale = Vector2(20, 20)
+script = ExtResource("2_fwux2")
+target = NodePath("../Target2")
+oblivious = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent2"]
+modulate = Color(0.27, 0.683667, 1, 1)
+mesh = SubResource("SphereMesh_necqq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent2"]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+debug_enabled = true
+
+[node name="Agent3" type="Node2D" parent="." node_paths=PackedStringArray("target") groups=["agent"]]
+modulate = Color(0.07, 1, 0.7055, 1)
+z_index = 1
+position = Vector2(452, 251)
+scale = Vector2(20, 20)
+script = ExtResource("2_fwux2")
+target = NodePath("../Target2")
+oblivious = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent3"]
+modulate = Color(0.27, 0.683667, 1, 1)
+mesh = SubResource("SphereMesh_necqq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent3"]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+debug_enabled = true
+
+[node name="Agent4" type="Node2D" parent="." node_paths=PackedStringArray("target") groups=["agent"]]
+modulate = Color(0.07, 1, 0.7055, 1)
+z_index = 1
+position = Vector2(448, 279)
+scale = Vector2(20, 20)
+script = ExtResource("2_fwux2")
+target = NodePath("../Target2")
+oblivious = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent4"]
+modulate = Color(0.27, 0.683667, 1, 1)
+mesh = SubResource("SphereMesh_necqq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent4"]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+debug_enabled = true
+
+[node name="Agent5" type="Node2D" parent="." node_paths=PackedStringArray("target") groups=["agent"]]
+modulate = Color(0.07, 1, 0.7055, 1)
+z_index = 1
+position = Vector2(421, 278)
+scale = Vector2(20, 20)
+script = ExtResource("2_fwux2")
+target = NodePath("../Target2")
+oblivious = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent5"]
+modulate = Color(0.27, 0.683667, 1, 1)
+mesh = SubResource("SphereMesh_necqq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent5"]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+debug_enabled = true
+
+[node name="Agent6" type="Node2D" parent="." node_paths=PackedStringArray("target") groups=["agent"]]
+modulate = Color(0.07, 1, 0.7055, 1)
+z_index = 1
+position = Vector2(456, 219)
+scale = Vector2(20, 20)
+script = ExtResource("2_fwux2")
+target = NodePath("../Target2")
+oblivious = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent6"]
+modulate = Color(0.27, 0.683667, 1, 1)
+mesh = SubResource("SphereMesh_necqq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent6"]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+debug_enabled = true
+
+[node name="Agent12" type="Node2D" parent="." node_paths=PackedStringArray("target") groups=["agent"]]
+modulate = Color(0.07, 1, 0.7055, 1)
+z_index = 1
+position = Vector2(423, 250)
+scale = Vector2(20, 20)
+script = ExtResource("2_fwux2")
+target = NodePath("../Target2")
+oblivious = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Agent12"]
+modulate = Color(0.27, 0.683667, 1, 1)
+mesh = SubResource("SphereMesh_necqq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent12"]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+debug_enabled = true
 
 [node name="Simulation" type="Node2D" parent="."]
 script = ExtResource("3_62xxc")
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
-visible = false
-position = Vector2(155, 224)
-vertices = PackedVector2Array(-94, -5, 114, -7, 112, 32, -91, 32)
-affect_navigation_mesh = true
-carve_navigation_mesh = true
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_1ntgi")
 
+[node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D" groups=["obstacle"]]
+polygon = PackedVector2Array(181, 336, 7, 333, 4, 493, 181, 493)
+
+[node name="Polygon2D2" type="Polygon2D" parent="NavigationRegion2D" groups=["obstacle"]]
+position = Vector2(5, -323)
+polygon = PackedVector2Array(181, 336, 7, 333, 4, 493, 181, 493)
+
+[node name="Polygon2D3" type="Polygon2D" parent="NavigationRegion2D" groups=["obstacle"]]
+position = Vector2(311, -325)
+polygon = PackedVector2Array(181, 336, 7, 333, 4, 493, 181, 493)
+
+[node name="Polygon2D4" type="Polygon2D" parent="NavigationRegion2D" groups=["obstacle"]]
+position = Vector2(311, 7)
+polygon = PackedVector2Array(181, 336, 7, 333, 4, 493, 181, 493)
+
 [node name="Target" type="Node2D" parent="."]
-position = Vector2(256, 417)
+modulate = Color(0.183333, 1, 0, 1)
+position = Vector2(249, 460)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Target"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_jcmh5")
+
+[node name="Target2" type="Node2D" parent="."]
+modulate = Color(0.183333, 1, 0, 1)
+position = Vector2(48, 253)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Target2"]
 scale = Vector2(20, 20)
 mesh = SubResource("BoxMesh_jcmh5")
